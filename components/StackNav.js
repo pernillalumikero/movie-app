@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 export default function StackNav() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="MovieSearch" component={MovieSearch} />
+            <Stack.Screen name="Movie Search" component={MovieSearch} />
             <Stack.Screen name="Movie" component={Movie} />
         </Stack.Navigator>
     )

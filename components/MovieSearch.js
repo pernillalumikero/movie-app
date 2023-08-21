@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { Text, StyleSheet, View, TextInput, FlatList, Image, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, TextInput, FlatList, Image, TouchableOpacity, ImageBackground } from 'react-native'
 
 export default function MovieSearch({navigation}) {
 
   const [movies, setMovies] = useState([]);
-  const [searchedMovie, setSearchedMovie] = useState("My little pony");
+  const [searchedMovie, setSearchedMovie] = useState("Batman");
 
 
   let newSearch = searchedMovie;
@@ -30,9 +30,11 @@ export default function MovieSearch({navigation}) {
     fetchMovies()
   }
 
+  const image = {uri: 'https://cdn.pixabay.com/photo/2015/01/11/09/19/film-596009_1280.jpg'};
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.header1}>MovieSearch</Text>
+    <ImageBackground source={image} style={styles.container}>
+      <Text style={styles.header1}>Movie Search</Text>
       <TextInput
         style={styles.input}
         placeholder={searchedMovie}
@@ -40,9 +42,12 @@ export default function MovieSearch({navigation}) {
       </TextInput>
       {!movies.Error
         ? <FlatList
+        style={styles.list}
           data={movies.Search}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Movie')} >
+            <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Movie', {
+              itemId : item.imdbID
+            })} >
               <Text style={styles.title}>{item.Title}</Text>
               <Image source={{ uri: item.Poster }} style={styles.poster} />
               <Text>Year: {item.Year}</Text>
@@ -53,7 +58,7 @@ export default function MovieSearch({navigation}) {
         />
         : <Text style={styles.error}>{movies.Error}</Text>}
 
-    </View>
+    </ImageBackground>
   )
 }
 
@@ -105,6 +110,9 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: 'black',
     marginTop: 20
+  },
+  list: {
+    backgroundColor: 'rgba(255, 255, 255, 0.0)'
   },
   error: {
     color: 'red',

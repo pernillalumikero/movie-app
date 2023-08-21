@@ -1,9 +1,12 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Button, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+
+const image = {uri: 'https://cdn.pixabay.com/photo/2015/01/11/09/19/film-596009_1280.jpg'};
 
 export default function Home({navigation}) {
   return (
-    <View style={styles.container}>
+    <ImageBackground source={image} resizeMode="cover" style={styles.container}>
+      <View style={styles.container2}></View>
       <Text style={styles.header1}>Movie Database</Text>
       <Text style={styles.text}>Welcome to the Movie Database! 
         Here you can search for your favorite movies,
@@ -17,7 +20,8 @@ export default function Home({navigation}) {
         >
           <Text style={styles.buttonText}>Search</Text>
         </TouchableOpacity>
-    </View>
+        
+    </ImageBackground>
   )
 }
 
@@ -26,7 +30,16 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      paddingTop: 50
+      paddingTop: 50,
+    },
+    container2: {
+      flex: 1,
+      backgroundColor: '#000',
+      width: '100%',
+      height: '110%',
+      opacity: 0.5,
+      position: 'absolute',
+      alignItems: 'center'
     },
     header1: {
       fontSize: 40,
@@ -42,7 +55,8 @@ const styles = StyleSheet.create({
     },
     text: {
       fontSize: 20,
-      padding: 30
+      padding: 30,
+      color: 'white'
     },
     button: {
       backgroundColor: 'orange',
