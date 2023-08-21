@@ -9,7 +9,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNav() {
     return (
         <Drawer.Navigator>
-          <Drawer.Screen name="Home" component={Home} />
+          <Drawer.Screen name="Language" component={Home} />
           <Drawer.Screen name="Movie Search" component={MovieSearch} />
           <Drawer.Screen name="About" component={About} />
         </Drawer.Navigator>
