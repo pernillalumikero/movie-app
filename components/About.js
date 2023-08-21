@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import DrawerNav from './DrawerNav';
 
 export default function About() {
   return (
@@ -12,7 +11,6 @@ export default function About() {
             Information about movies is fetched with OMDb API.
             Copyright © Pernilla Lumikero 2023
         </Text>
-      <DrawerNav />
     </View>
   )
 }

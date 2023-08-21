@@ -7,9 +7,11 @@ export default function MovieSearch() {
     const [movies, setMovies] = useState([]);
     const [searchedMovie, setSearchedMovie] = useState("My little pony");
 
+    let newSearch = searchedMovie;
+
     const fetchMovies = async () => {
         try {
-          const response = await fetch(`https://www.omdbapi.com/?apikey=39ecd9bc&s=${searchedMovie}`);
+          const response = await fetch(`https://www.omdbapi.com/?apikey=39ecd9bc&s=${newSearch}`);
           const movieList = await response.json();
           setMovies(movieList);
         } catch(error) {
@@ -22,7 +24,9 @@ export default function MovieSearch() {
       }, [])
 
       const handleChange = (value) => {
-        setSearchedMovie(value, fetchMovies())
+        newSearch = value
+        setSearchedMovie(newSearch)
+        fetchMovies()
         
         console.log(movies)
       }
@@ -43,6 +47,7 @@ export default function MovieSearch() {
                 <Image source={{uri: item.Poster}} style={styles.poster} />
                 <Text>Year: {item.Year}</Text>
                 <Text>Type: {item.Type}</Text>
+                <View style={styles.line}></View>
                 </View>
               )}
             />
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        paddingTop: 30
+        paddingTop: 50,
     },
     header1: {
         fontSize: 40,
@@ -75,10 +80,19 @@ const styles = StyleSheet.create({
     },
     poster: {
       height: 100,
-      width: 80
+      width: 80,
+      marginBottom: 20
     },
     title: {
-      fontSize: 20
+      fontSize: 20,
+      padding: 20,
+      paddingTop: 0
+    },
+    line: {
+      height: 1,
+      width: 300,
+      backgroundColor: 'black',
+      marginTop: 20
     }
 
 });
