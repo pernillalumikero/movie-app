@@ -34,6 +34,7 @@ export default function MovieSearch({navigation}) {
 
   return (
     <ImageBackground source={image} style={styles.container}>
+      <View style={styles.container2}></View>
       <Text style={styles.header1}>Movie Search</Text>
       <TextInput
         style={styles.input}
@@ -42,7 +43,7 @@ export default function MovieSearch({navigation}) {
       </TextInput>
       {!movies.Error
         ? <FlatList
-        style={styles.list}
+        
           data={movies.Search}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Movie', {
@@ -50,8 +51,8 @@ export default function MovieSearch({navigation}) {
             })} >
               <Text style={styles.title}>{item.Title}</Text>
               <Image source={{ uri: item.Poster }} style={styles.poster} />
-              <Text>Year: {item.Year}</Text>
-              <Text>Type: {item.Type}</Text>
+              <Text style={styles.text}>Year: {item.Year}</Text>
+              <Text style={styles.text}>Type: {item.Type}</Text>
               <View style={styles.line}></View>
             </TouchableOpacity>
           )}
@@ -65,9 +66,17 @@ export default function MovieSearch({navigation}) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     paddingTop: 50,
+  },
+  container2: {
+    flex: 1,
+    backgroundColor: '#000',
+    width: '100%',
+    height: '110%',
+    opacity: 0.5,
+    position: 'absolute',
+    alignItems: 'center'
   },
   header1: {
     fontSize: 40,
@@ -82,40 +91,41 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   text: {
-    fontSize: 20,
-    padding: 30
+    color: 'white'
   },
   input: {
     marginTop: 20,
-    borderColor: 'black',
-    borderWidth: 1,
     padding: 10,
     marginBottom: 20,
     width: 180,
     fontSize: 20,
-
+    backgroundColor: 'white',
+    opacity: 0.7,
+    borderRadius: 5
   },
   poster: {
     height: 100,
     width: 80,
-    marginBottom: 20
+    marginBottom: 20,
+    borderColor: 'white',
+    borderWidth: 1
   },
   title: {
     fontSize: 20,
     padding: 20,
-    paddingTop: 0
+    paddingTop: 0,
+    color: 'white'
   },
   line: {
     height: 1,
     width: 300,
-    backgroundColor: 'black',
+    backgroundColor: 'white',
     marginTop: 20
   },
   list: {
-    backgroundColor: 'rgba(255, 255, 255, 0.0)'
+    backgroundColor:'red'
   },
   error: {
     color: 'red',
   }
-
 });

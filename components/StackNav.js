@@ -7,8 +7,14 @@ const Stack = createStackNavigator();
 
 export default function StackNav() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Movie Search" component={MovieSearch} />
+        <Stack.Navigator screenOptions={{
+            headerShadowVisible: false,
+            headerTintColor: 'orange',
+            headerStyle: {
+              backgroundColor: '#181716',
+            }
+        }}>
+            <Stack.Screen name="Movie Search" headerTitle={'Search'} component={MovieSearch} />
             <Stack.Screen name="Movie" component={Movie} />
         </Stack.Navigator>
     )

@@ -7,8 +7,8 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNav() {
     return (
-        <Drawer.Navigator >
-          <Drawer.Screen name="About" component={About} />
+        <Drawer.Navigator screenOptions={{ headerTintColor: 'orange'}} >
+          <Drawer.Screen  name="Settings" component={About} />
           <Drawer.Screen name="Language" component={Language} />
         </Drawer.Navigator>
       );

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 
 const image = {uri: 'https://cdn.pixabay.com/photo/2015/01/11/09/19/film-596009_1280.jpg'};
 
