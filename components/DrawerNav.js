@@ -7,7 +7,13 @@ const Drawer = createDrawerNavigator();
 
 export default function DrawerNav() {
     return (
-        <Drawer.Navigator screenOptions={{ headerTintColor: 'orange'}} >
+        <Drawer.Navigator screenOptions={{
+          headerShadowVisible: false,
+          headerTintColor: 'orange',
+          headerStyle: {
+            backgroundColor: '#181716',
+          }
+      }} >
           <Drawer.Screen  name="Settings" component={About} />
           <Drawer.Screen name="Language" component={Language} />
         </Drawer.Navigator>

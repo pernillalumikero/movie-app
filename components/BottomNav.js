@@ -15,8 +15,12 @@ export default function BottomNav() {
           headerTintColor: 'orange',
           headerStyle: {
             backgroundColor: '#000',
-          }
-          
+          },
+          tabBarActiveTintColor: 'orange',
+          tabBarStyle: {
+            backgroundColor: '#181716'
+          },
+        
       }} >
           <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: ({color}) => <Ionicons name="home" size={24} color={color} />}}/>
           <Tab.Screen name="Search" component={StackNav} options={{ tabBarIcon: ({color}) => <Ionicons name="search" size={24} color={color} />}} />
