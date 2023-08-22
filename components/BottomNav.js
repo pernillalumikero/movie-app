@@ -12,19 +12,15 @@ export default function BottomNav() {
         <Tab.Navigator
         screenOptions={{
           headerShown: false,
-          headerTintColor: 'orange',
-          headerStyle: {
-            backgroundColor: '#000',
-          },
           tabBarActiveTintColor: 'orange',
           tabBarStyle: {
-            backgroundColor: '#181716'
+            backgroundColor: '#181716',
           },
         
       }} >
           <Tab.Screen name="Home" component={Home} options={{ tabBarIcon: ({color}) => <Ionicons name="home" size={24} color={color} />}}/>
-          <Tab.Screen name="Search" component={StackNav} options={{ tabBarIcon: ({color}) => <Ionicons name="search" size={24} color={color} />}} />
-          <Tab.Screen name="Settings" component={DrawerNav} options={{ tabBarIcon: ({color}) => <Ionicons name="ios-settings-sharp" size={24} color={color} />}} />
+          <Tab.Screen name="Movie Search" component={StackNav} options={{ tabBarIcon: ({color}) => <Ionicons name="search" size={24} color={color} />}} />
+          <Tab.Screen name="About" component={DrawerNav} options={{ tabBarIcon: ({color}) => <Ionicons name="ios-settings-sharp" size={24} color={color} />}} />
         </Tab.Navigator>
       );
 }

@@ -6,6 +6,7 @@ const image = {uri: 'https://cdn.pixabay.com/photo/2015/01/11/09/19/film-596009_
 export default function Home({navigation}) {
   return (
     <ImageBackground source={image} resizeMode="cover" style={styles.container}>
+      <View style={styles.blackbar}></View>
       <View style={styles.container2}></View>
       <Text style={styles.header1}>Movie Database</Text>
       <Text style={styles.text}>Welcome to the Movie Database! 
@@ -15,7 +16,7 @@ export default function Home({navigation}) {
         </Text>
       <TouchableOpacity
         title='Search'
-        onPress={() => navigation.navigate('Search')}
+        onPress={() => navigation.navigate('Movie Search')}
         style={styles.button}
         >
           <Text style={styles.buttonText}>Search</Text>
@@ -82,6 +83,15 @@ const styles = StyleSheet.create({
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
+    }, 
+    blackbar: {
+      width: '100%',
+      height: 60,
+      backgroundColor: '#181716',
+      borderBottomWidth: 1,
+      borderColor: 'white',
+      marginTop: -50,
+      marginBottom: 50
     }
     
   
