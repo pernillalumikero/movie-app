@@ -8,10 +8,14 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNav() {
     return (
         <Drawer.Navigator screenOptions={{
-          headerShadowVisible: false,
           headerTintColor: 'orange',
           headerStyle: {
             backgroundColor: '#181716',
+          },
+          drawerActiveTintColor: 'orange',
+          drawerInactiveTintColor: 'white',
+          drawerStyle: {
+            backgroundColor: '#181716'
           }
       }} >
           <Drawer.Screen  name="Settings" component={About} />

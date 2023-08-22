@@ -13,6 +13,7 @@ export default function BottomNav() {
         screenOptions={{
           headerShown: false,
           tabBarActiveTintColor: 'orange',
+          tabBarInactiveTintColor: 'white',
           tabBarStyle: {
             backgroundColor: '#181716',
           },

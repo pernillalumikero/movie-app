@@ -1,14 +1,25 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, ImageBackground } from 'react-native'
+import SelectDropdown from 'react-native-select-dropdown'
 
 export default function Language() {
+
+    const languages = ["English", "Swedish", "Finnish"]
+
+    const image = { uri: 'https://cdn.pixabay.com/photo/2015/01/11/09/19/film-596009_1280.jpg' };
+
     return (
-        <View style={styles.container}>
+        <ImageBackground source={image} style={styles.container}>
+            <View style={styles.container2}></View>
             <Text style={styles.header1}>Choose Language</Text>
-            <Text style={styles.text}>English</Text>
-            <Text style={styles.text}>Swedish</Text>
-            <Text style={styles.text}>Finnish</Text>
-        </View>
+            <SelectDropdown
+                data={languages}
+                onSelect={(selectedItem, index) => {
+                    console.log(selectedItem, index)
+                }}
+               
+            />
+        </ImageBackground>
     )
 }
 
@@ -19,13 +30,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 30
     },
+    container2: {
+        flex: 1,
+        backgroundColor: '#000',
+        width: '100%',
+        height: '110%',
+        opacity: 0.5,
+        position: 'absolute',
+        alignItems: 'center'
+    },
     header1: {
         fontSize: 40,
         color: 'orange',
         marginBottom: 20
-      },
-      text: {
+    },
+    text: {
         fontSize: 20,
-        padding: 10
-      }
+        padding: 10,
+        color: 'white'
+    },
 });

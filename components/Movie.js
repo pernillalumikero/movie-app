@@ -143,11 +143,10 @@ const styles = StyleSheet.create({
     },
     rating: {
         justifyContent: 'center',
-        backgroundColor: 'white',
-        padding: 10,
+        padding: 0,
     },
     list: {
-        borderBlockColor: 'black',
+        backgroundColor: 'white',
         borderWidth: 1,
         borderRadius: 10,
         margin: 10,
