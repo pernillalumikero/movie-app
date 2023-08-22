@@ -100,8 +100,6 @@ const styles = StyleSheet.create({
     width: 180,
     fontSize: 20,
     backgroundColor: 'white',
-    opacity: 0.7,
-    borderRadius: 5
   },
   poster: {
     height: 100,
